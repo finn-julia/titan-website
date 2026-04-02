@@ -92,7 +92,7 @@ const projects = [
   {
     title: 'Structural Renovation',
     category: 'Retrofit',
-    img: 'https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=700&q=80',
+    img: '/preconstruct.png',
   },
 ]
 
@@ -373,7 +373,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1607472586893-edb74c84f0a0?auto=format&fit=crop&w=500&q=80"
+                src="/safety.jpg"
                 alt="Safety on site"
                 className="w-full h-56 object-cover"
               />
