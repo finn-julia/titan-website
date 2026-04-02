@@ -1,19 +1,21 @@
 import { useState } from 'react'
-import React from 'react'
+
+const initialForm = {
+  name: '',
+  company: '',
+  email: '',
+  phone: '',
+  projectType: '',
+  message: '',
+  how: '',
+}
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    projectType: '',
-    message: '',
-    how: '',
-  })
+  const [form, setForm] = useState(initialForm)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({})
+  const [submitError, setSubmitError] = useState('')
 
   function validate() {
     const e = {}
@@ -28,21 +30,54 @@ export default function Contact() {
     const { name, value } = e.target
     setForm((f) => ({ ...f, [name]: value }))
     if (errors[name]) setErrors((er) => ({ ...er, [name]: '' }))
+    if (submitError) setSubmitError('')
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     const e2 = validate()
     if (Object.keys(e2).length) {
       setErrors(e2)
       return
     }
+
     setLoading(true)
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false)
+    setSubmitError('')
+
+    try {
+      const payload = new FormData()
+      payload.append('name', form.name)
+      payload.append('company', form.company)
+      payload.append('email', form.email)
+      payload.append('phone', form.phone)
+      payload.append('projectType', form.projectType)
+      payload.append('how', form.how)
+      payload.append('message', form.message)
+      payload.append('_subject', `New Titan Structural Group inquiry from ${form.name}`)
+      payload.append('_template', 'table')
+      payload.append('_captcha', 'false')
+
+      const response = await fetch('https://formsubmit.co/ajax/estimating4@titansg.com', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: payload,
+      })
+
+      const result = await response.json()
+
+      if (!response.ok || result.success === 'false') {
+        throw new Error(result.message || 'Unable to send your message right now.')
+      }
+
       setSubmitted(true)
-    }, 1200)
+      setForm(initialForm)
+    } catch (error) {
+      setSubmitError(error.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -51,7 +86,7 @@ export default function Contact() {
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/contact.jpg')" }}
+          style={{backgroundImage: "url('/contact.jpg')"}}
         />
         <div className="absolute inset-0 bg-navy-950/82" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,49 +154,48 @@ export default function Contact() {
                   {
                     icon: (
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10m-11 9h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v11a2 2 0 002 2z" />
                       </svg>
                     ),
-                    label: 'Office Hours',
-                    value: 'Mon–Fri, 7:00 AM – 5:00 PM',
+                    label: 'Availability',
+                    value: 'Mon - Fri | 7:00 AM - 5:00 PM',
                     href: null,
                   },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-navy-950 text-gold-500 flex items-center justify-center flex-shrink-0">
+                  <div key={item.label} className="flex items-start gap-4 bg-white p-5 shadow-sm">
+                    <div className="w-11 h-11 bg-gold-500 text-navy-950 flex items-center justify-center flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <div className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-0.5">{item.label}</div>
+                      <div className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-1">{item.label}</div>
                       {item.href ? (
-                        <a href={item.href} className="text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors">
+                        <a href={item.href} className="text-navy-900 font-semibold hover:text-gold-600 transition-colors">
                           {item.value}
                         </a>
                       ) : (
-                        <span className="text-navy-900 font-medium text-sm">{item.value}</span>
+                        <div className="text-navy-900 font-semibold">{item.value}</div>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Photo */}
-              <div className="relative mt-6 hidden lg:block">
+              {/* Image card */}
+              <div className="bg-white shadow-sm overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80"
-                  alt="Construction project"
-                  className="w-full h-56 object-cover"
+                  alt="Steel construction project"
+                  className="w-full h-64 object-cover"
                 />
-                <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-gold-500" />
               </div>
             </div>
 
             {/* Form */}
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="bg-white p-12 text-center shadow-sm h-full flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-gold-500 flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-navy-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white shadow-sm p-10 h-full flex flex-col items-center justify-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                    <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -170,7 +204,11 @@ export default function Contact() {
                     Thank you for reaching out to Titan Structural Group. A member of our team will be in touch with you shortly to discuss your project.
                   </p>
                   <button
-                    onClick={() => { setSubmitted(false); setForm({ name:'',company:'',email:'',phone:'',projectType:'',message:'',how:'' }) }}
+                    onClick={() => {
+                      setSubmitted(false)
+                      setForm(initialForm)
+                      setSubmitError('')
+                    }}
                     className="btn-primary"
                   >
                     Send Another Message
@@ -307,6 +345,12 @@ export default function Contact() {
                         {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
                       </div>
                     </div>
+
+                    {submitError && (
+                      <div className="mt-5 border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                        {submitError}
+                      </div>
+                    )}
 
                     <div className="mt-6">
                       <button
