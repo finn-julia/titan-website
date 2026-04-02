@@ -18,7 +18,7 @@ const services = [
     ),
     title: 'Structural Design & Engineering',
     desc: 'Full structural steel design and engineering services with precision detailing, connection design, and constructability review from concept to permit.',
-    img: 'https://images.unsplash.com/photo-1581092160562-40aa52cbf33a?auto=format&fit=crop&w=800&q=80',
+    img: '/design.jpg',
   },
   {
     icon: (

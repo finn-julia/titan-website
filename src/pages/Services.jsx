@@ -15,7 +15,7 @@ const services = [
       'Code compliance review',
       'BIM coordination and clash detection',
     ],
-    img: 'https://images.unsplash.com/photo-1581092160562-40aa52cbf33a?auto=format&fit=crop&w=900&q=80',
+    img: '/design.jpg',
   },
   {
     id: 'fabrication',
