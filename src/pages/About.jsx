@@ -113,7 +113,7 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1534430480872-b5c23c1aae5c?auto=format&fit=crop&w=600&q=80"
+                src="/crane.jpg"
                 alt="Construction crane"
                 className="w-full h-64 object-cover"
               />
@@ -128,7 +128,7 @@ export default function About() {
                 className="w-full h-64 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=600&q=80"
+                src="/preconstruct.png"
                 alt="Steel structure"
                 className="w-full h-64 object-cover mt-8"
               />

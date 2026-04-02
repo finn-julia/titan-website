@@ -60,7 +60,7 @@ const services = [
       'Owner and GC collaboration',
       'Bid packaging and procurement strategy',
     ],
-    img: 'https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=900&q=80',
+    img: '/preconstruct.png',
   },
   {
     id: 'retrofits',

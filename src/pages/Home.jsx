@@ -195,7 +195,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=900&q=80"
+                src="/preconstruct.png"
                 alt="Structural steel construction"
                 className="w-full h-[480px] object-cover"
               />
