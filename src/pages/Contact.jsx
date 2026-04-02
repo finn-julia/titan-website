@@ -102,8 +102,8 @@ export default function Contact() {
                       </svg>
                     ),
                     label: 'Email',
-                    value: 'info@titanstructuralgroup.com',
-                    href: 'mailto:info@titanstructuralgroup.com',
+                    value: 'estimating4@titansg.com',
+                    href: 'mailto:estimating4@titansg.com',
                   },
                   {
                     icon: (
