@@ -36,14 +36,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            {/* Icon mark */}
-            <div className="w-10 h-10 bg-gold-500 flex items-center justify-center flex-shrink-0">
-              <svg viewBox="0 0 40 40" className="w-6 h-6" fill="none">
-                <rect x="4" y="18" width="32" height="4" fill="#0b1732" />
-                <rect x="10" y="4" width="4" height="32" fill="#0b1732" />
-                <rect x="26" y="4" width="4" height="32" fill="#0b1732" />
-                <rect x="4" y="4" width="32" height="4" fill="#0b1732" />
-              </svg>
+            < div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <img src="/logo.png" alt="Titan Structural Group logo" className="w-10 h-10 object-contain" />
             </div>
             <div className="leading-none">
               <div className="text-white font-display font-700 text-xl tracking-wider uppercase">
