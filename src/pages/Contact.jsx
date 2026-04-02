@@ -51,7 +51,7 @@ export default function Contact() {
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1920&q=80')" }}
+          style={{ backgroundImage: "url('/contact.jpg')" }}
         />
         <div className="absolute inset-0 bg-navy-950/82" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +60,7 @@ export default function Contact() {
             Let's Build<br />
             <span className="text-gold-400">Together</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
+          <p className="text-white text-lg max-w-2xl leading-relaxed">
             Ready to start your next structural steel project? Contact us for a bid, consultation, or to discuss how Titan Structural Group can deliver for your project.
           </p>
         </div>
