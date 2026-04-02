@@ -113,7 +113,7 @@ export default function Projects() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             {[
               { v: '500+', l: 'Projects Delivered' },
-              { v: '50M+', l: 'SF Built' },
+              { v: '30M+', l: 'SF Built' },
               { v: '20+', l: 'Years Active' },
               { v: '100%', l: 'Safety Record' },
             ].map((s) => (
