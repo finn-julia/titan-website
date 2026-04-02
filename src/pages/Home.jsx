@@ -49,7 +49,7 @@ const services = [
     ),
     title: 'Preconstruction & Value Engineering',
     desc: 'Early engagement, budget planning, and value engineering to identify cost savings and constructability improvements before breaking ground.',
-    img: 'https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=800&q=80',
+    img: '/preconstruct.png',
   },
   {
     icon: (
