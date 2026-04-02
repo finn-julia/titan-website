@@ -32,7 +32,7 @@ const allProjects = [
     category: 'Commercial',
     location: 'Suburban Campus',
     size: '95,000 SF',
-    img: 'https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=800&q=80',
+    img: '/preconstruct.png',
     desc: 'Four-building corporate campus expansion with interconnected skybridge structures and a central atrium steel feature.',
   },
   {
@@ -40,7 +40,7 @@ const allProjects = [
     category: 'Retrofit',
     location: 'Medical District',
     size: '62,000 SF',
-    img: 'https://images.unsplash.com/photo-1534430480872-b5c23c1aae5c?auto=format&fit=crop&w=800&q=80',
+    img: '/health.jpg',
     desc: 'Seismic retrofit and structural reinforcement of an occupied hospital building — completed in phased construction with zero disruption to operations.',
   },
   {
@@ -48,7 +48,7 @@ const allProjects = [
     category: 'Specialty',
     location: 'Sports District',
     size: '320,000 SF',
-    img: 'https://images.unsplash.com/photo-1565008887977-f98d91e71ac5?auto=format&fit=crop&w=800&q=80',
+    img: '/stadium.jpg',
     desc: 'Long-span roof structure and bowl framing for a regional sports arena, including feature steel truss canopy elements.',
   },
   {
@@ -64,7 +64,7 @@ const allProjects = [
     category: 'Industrial',
     location: 'Port District',
     size: '215,000 SF',
-    img: 'https://images.unsplash.com/photo-1581092160562-40aa52cbf33a?auto=format&fit=crop&w=800&q=80',
+    img: '/warehouse.jpg',
     desc: 'Structural steel erection for a temperature-controlled warehouse facility with heavy crane rail support structures throughout.',
   },
   {
@@ -72,7 +72,7 @@ const allProjects = [
     category: 'Retrofit',
     location: 'Arts District',
     size: '44,000 SF',
-    img: 'https://images.unsplash.com/photo-1607472586893-edb74c84f0a0?auto=format&fit=crop&w=800&q=80',
+    img: '/historic.jpg',
     desc: 'Adaptive reuse of a century-old warehouse — structural steel reinforcement, new floor additions, and rooftop terrace framing.',
   },
 ]
