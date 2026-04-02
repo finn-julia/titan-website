@@ -113,7 +113,7 @@ export default function Contact() {
                       </svg>
                     ),
                     label: 'Location',
-                    value: 'United States',
+                    value: 'Bronx, NY',
                     href: null,
                   },
                   {
