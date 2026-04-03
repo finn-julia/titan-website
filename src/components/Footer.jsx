@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center justify-center flex-shrink-0">
-                <img src="/logo.png" alt="Titan logo" className="w-6 h-6 object-contain" />
+                <img src="/logo.png" alt="Titan logo" className="w-20 h-20 object-contain" />
               </div>
               <div className="leading-none">
                 <div className="text-white font-display font-700 text-xl tracking-wider uppercase">Titan</div>

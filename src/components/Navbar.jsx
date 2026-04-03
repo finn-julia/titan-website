@@ -36,8 +36,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            < div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
-              <img src="/logo.png" alt="Titan Structural Group logo" className="w-10 h-10 object-contain" />
+            < div className="w-100 h-100 flex items-center justify-center flex-shrink-0">
+              <img src="/logo.png" alt="Titan Structural Group logo" className="w-50 h-10 object-contain" />
             </div>
             <div className="leading-none">
               <div className="text-white font-display font-700 text-xl tracking-wider uppercase">
